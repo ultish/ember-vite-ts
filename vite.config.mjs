@@ -24,6 +24,9 @@ const extensions = [
 
 export default defineConfig(({ mode }) => {
   return {
+    esbuild: {
+      exclude: /\.m?ts$/,
+    },
     resolve: {
       extensions,
     },
