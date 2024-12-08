@@ -1,5 +1,5 @@
-import Application from 'my-fancy-app-ts/app';
-import config from 'my-fancy-app-ts/config/environment';
+import Application from 'ember-vite-ts/app';
+import config from 'ember-vite-ts/config/environment';
 import * as QUnit from 'qunit';
 import { setApplication } from '@ember/test-helpers';
 import { setup } from 'qunit-dom';

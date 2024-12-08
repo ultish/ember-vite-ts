@@ -1,4 +1,4 @@
-# my-fancy-app-ts
+# ember-vite-ts
 
 This README outlines the details of collaborating on this Ember application.
 A short introduction of this app could easily go here.
@@ -16,7 +16,7 @@ You will need the following things properly installed on your computer.
 ## Installation
 
 - `git clone <repository-url>` this repository
-- `cd my-fancy-app-ts`
+- `cd ember-vite-ts`
 - `pnpm install`
 
 ## Running / Development

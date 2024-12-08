@@ -1,8 +1,8 @@
 {
-  "name": "my-fancy-app-ts",
+  "name": "ember-vite-ts",
   "version": "0.0.0",
   "private": true,
-  "description": "Small description for my-fancy-app-ts goes here",
+  "description": "Small description for ember-vite-ts goes here",
   "repository": "",
   "license": "MIT",
   "author": "",

@@ -1,6 +1,6 @@
 import Route from 'ember-route-template';
 import { pageTitle } from 'ember-page-title';
-import Hello from 'my-fancy-app-ts/components/hello';
+import Hello from 'ember-vite-ts/components/hello';
 
 export default Route(
   <template>

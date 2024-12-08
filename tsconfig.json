@@ -28,10 +28,10 @@
     */
     "allowImportingTsExtensions": true,
     "paths": {
-      "my-fancy-app-ts/tests/*": [
+      "ember-vite-ts/tests/*": [
         "./tests/*"
       ],
-      "my-fancy-app-ts/*": [
+      "ember-vite-ts/*": [
         "./app/*"
       ],
       "*": [

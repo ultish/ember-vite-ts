@@ -1,6 +1,6 @@
 /**
  * Type declarations for
- *    import config from 'my-fancy-app-ts/config/environment'
+ *    import config from 'ember-vite-ts/config/environment'
  */
 declare const config: {
   environment: string;

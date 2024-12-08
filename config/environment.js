@@ -2,7 +2,7 @@
 
 module.exports = function (environment) {
   const ENV = {
-    modulePrefix: 'my-fancy-app-ts',
+    modulePrefix: 'ember-vite-ts',
     environment,
     rootURL: '/',
     locationType: 'history',
