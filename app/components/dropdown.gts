@@ -41,7 +41,7 @@ export default class Dropdown extends Component<Signature> {
       My Test
     </select>
 
-    {{(this.initChoices this)}}
+    {{this.initChoices this}}
 
     <span class="hide">
       {{this.choices}}

@@ -4,6 +4,7 @@ import Dropdown from './dropdown';
 import { action } from '@ember/object';
 import { on } from '@ember/modifier/on';
 import AltDropdown from './alt-dropdown.gts';
+import { hash } from '@ember/helper';
 
 export default class Hello extends Component {
   get name() {
@@ -77,7 +78,13 @@ export default class Hello extends Component {
     <button {{on "click" this.add}} type="button">Add</button>
     <Dropdown @choices={{this.data}} />
 
-    <AltDropdown @choices={{this.data}} />
+    <AltDropdown
+      @choices={{this.data}}
+      @options={{hash
+        removeItemButton=true
+        placeholderValue="Select an option"
+      }}
+    />
 
     <div class="scroll-watcher"></div>
 
