@@ -122,6 +122,9 @@ importers:
       babel-plugin-ember-template-compilation:
         specifier: ^2.3.0
         version: 2.3.0
+      choices.js:
+        specifier: ^11.0.2
+        version: 11.0.2
       concurrently:
         specifier: ^9.1.0
         version: 9.1.0
@@ -2614,6 +2617,9 @@ packages:
 
   charm@1.0.2:
     resolution: {integrity: sha512-wqW3VdPnlSWT4eRiYX+hcs+C6ViBPUWk1qTCd+37qw9kEm/a5n2qcyQDMBWvSYKN/ctqZzeXNQaeBjOetJJUkw==}
+
+  choices.js@11.0.2:
+    resolution: {integrity: sha512-jGmvoZBQwfxGL7qOeadg/iprsK/XQwXvLnN0ZZwQIDtxtPjP5z7vgZCwr/zdrGAVAnC4+uomPD4+Pl/N/6XSqA==}
 
   chrome-trace-event@1.0.4:
     resolution: {integrity: sha512-rNjApaLzuwaOTjCiT8lSDdGN1APCiqkChLMJxJPWLunPAt5fy8xgU9/jNOchV84wfIxrA0lRQB7oCT8jrn/wrQ==}
@@ -9731,6 +9737,10 @@ snapshots:
   charm@1.0.2:
     dependencies:
       inherits: 2.0.4
+
+  choices.js@11.0.2:
+    dependencies:
+      fuse.js: 7.0.0
 
   chrome-trace-event@1.0.4: {}
 

@@ -1,8 +1,34 @@
 import Component from '@glimmer/component';
+import { tracked } from '@glimmer/tracking';
+import Dropdown from './dropdown';
+import { action } from '@ember/object';
+import { on } from '@ember/modifier/on';
 
 export default class Hello extends Component {
   get name() {
     return 'Jimmy';
+  }
+  @tracked index = 1;
+
+  @tracked choices = [
+    {
+      value: 'jimmy',
+      label: 'jimmy',
+    },
+    {
+      value: 'hana',
+      label: 'hana',
+    },
+  ];
+
+  @action
+  add() {
+    const x = `toro ${this.index++}`;
+    this.choices = [...this.choices, { value: x, label: x }];
+  }
+
+  get data() {
+    return this.choices;
   }
 
   <template>
@@ -46,6 +72,9 @@ export default class Hello extends Component {
         }
       }
     </style>
+
+    <button {{on "click" this.add}} type="button">Add</button>
+    <Dropdown @choices={{this.data}} />
 
     <div class="scroll-watcher"></div>
 
