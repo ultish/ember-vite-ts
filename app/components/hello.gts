@@ -3,6 +3,7 @@ import { tracked } from '@glimmer/tracking';
 import Dropdown from './dropdown';
 import { action } from '@ember/object';
 import { on } from '@ember/modifier/on';
+import AltDropdown from './alt-dropdown.gts';
 
 export default class Hello extends Component {
   get name() {
@@ -75,6 +76,8 @@ export default class Hello extends Component {
 
     <button {{on "click" this.add}} type="button">Add</button>
     <Dropdown @choices={{this.data}} />
+
+    <AltDropdown @choices={{this.data}} />
 
     <div class="scroll-watcher"></div>
 
