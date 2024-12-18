@@ -31,7 +31,7 @@ export default class DropdownCustom extends Component<Signature> {
         console.log('DONE');
         this.init = true;
       },
-      callbackOnCreateTemplates: function (
+      callbackOnCreateTemplates2: function (
         template,
         escapeForTemplate,
         getClassNames
@@ -98,11 +98,21 @@ export default class DropdownCustom extends Component<Signature> {
   }
 
   find(c) {
-    debugger;
-    return document.getElementById(c.id);
+    const parentElement = document.querySelector('.choices__list--dropdown');
+    const d = parentElement.querySelector(`[data-id="${c.id}"]`);
+
+    console.log(c.id, d);
+
+    const newDiv = document.createElement('div');
+    newDiv.textContent = 'This is a new child div';
+    d.appendChild(newDiv);
+
+    return newDiv;
+    // return document.getElementById(c.id);
   }
 
   get foudn() {
+    document.querySelector('[data-id="2"]');
     return document.getElementById('1');
   }
 
