@@ -3,8 +3,10 @@ import { tracked } from '@glimmer/tracking';
 import Dropdown from './dropdown';
 import { action } from '@ember/object';
 import { on } from '@ember/modifier/on';
-import AltDropdown from './alt-dropdown.gts';
+import AltDropdown from './alt-dropdown';
 import { hash } from '@ember/helper';
+import DropdownOptions from './dropdown-options';
+import DropdownCustom from './dopdown-custom.gts';
 
 export default class Hello extends Component {
   get name() {
@@ -16,10 +18,18 @@ export default class Hello extends Component {
     {
       value: 'jimmy',
       label: 'jimmy',
+      id: 1,
+      customProperties: {
+        test: 'hi',
+      },
     },
     {
       value: 'hana',
       label: 'hana',
+      id: 2,
+      customProperties: {
+        test: 'mi',
+      },
     },
   ];
 
@@ -27,6 +37,11 @@ export default class Hello extends Component {
   add() {
     const x = `toro ${this.index++}`;
     this.choices = [...this.choices, { value: x, label: x }];
+  }
+
+  @action
+  handleChoice(e) {
+    console.log('handleChoice', e);
   }
 
   get data() {
@@ -75,8 +90,18 @@ export default class Hello extends Component {
       }
     </style>
 
+    <DropdownCustom
+      @choices={{this.choices}}
+      @customChoiceComponent="CustomChoice"
+      @onChoice={{this.handleChoice}}
+    />
+
+    {{!-- <DropdownOptions @choices={{this.data}} as |c|>
+      {{log "what" c}}
+      <option>Hello {{c.label}}</option>
+    </DropdownOptions> --}}
     <button {{on "click" this.add}} type="button">Add</button>
-    <Dropdown @choices={{this.data}} />
+    {{!-- <Dropdown @choices={{this.data}} />
 
     <AltDropdown
       @choices={{this.data}}
@@ -84,7 +109,7 @@ export default class Hello extends Component {
         removeItemButton=true
         placeholderValue="Select an option"
       }}
-    />
+    /> --}}
 
     <div class="scroll-watcher"></div>
 
