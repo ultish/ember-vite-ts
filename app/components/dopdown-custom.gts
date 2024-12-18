@@ -57,8 +57,10 @@ export default class DropdownCustom extends Component<Signature> {
           </div>
         `);
           },
-          choice: ({ classNames }, data) => {
-            console.log('choiceDONE');
+          //config, choice, config.itemSelectText, groupLabel
+          choice: (config, data, itemSelectText, groupLabel) => {
+            console.log('choiceDONE', config, data, itemSelectText, groupLabel);
+            const { classNames } = config;
             return template(`
             <CustomChoice />
           <div class="${getClassNames(classNames.item).join(
