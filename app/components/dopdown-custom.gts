@@ -60,6 +60,9 @@ export default class DropdownCustom extends Component<Signature> {
           //config, choice, config.itemSelectText, groupLabel
           choice: (config, data, itemSelectText, groupLabel) => {
             console.log('choiceDONE', config, data, itemSelectText, groupLabel);
+
+            // TODO can prob just use customProperties to render basic things like an icon
+
             const { classNames } = config;
             return template(`
             <CustomChoice />
