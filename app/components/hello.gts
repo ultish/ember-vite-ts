@@ -7,6 +7,8 @@ import AltDropdown from './alt-dropdown';
 import { hash } from '@ember/helper';
 import DropdownOptions from './dropdown-options';
 import DropdownCustom from './dopdown-custom.gts';
+// import PhCube from 'ember-phosphor-icons/components/ph-cube';
+// import PhHeart from 'ember-phosphor-icons/components/ph-heart';
 
 export default class Hello extends Component {
   get name() {
@@ -35,8 +37,17 @@ export default class Hello extends Component {
 
   @action
   add() {
-    const x = `toro ${this.index++}`;
-    this.choices = [...this.choices, { value: x, label: x }];
+    this.index++;
+    const x = `toro ${this.index.toString()}`;
+    this.choices = [
+      ...this.choices,
+      {
+        value: x,
+        label: x,
+        id: this.index,
+        customProperties: { test: this.index.toString() },
+      },
+    ];
   }
 
   @action
@@ -90,16 +101,19 @@ export default class Hello extends Component {
       }
     </style>
 
-    <DropdownCustom
+    {{!-- <DropdownCustom
       @choices={{this.choices}}
       @customChoiceComponent="CustomChoice"
       @onChoice={{this.handleChoice}}
-    />
+    /> --}}
 
-    {{!-- <DropdownOptions @choices={{this.data}} as |c|>
-      {{log "what" c}}
+    {{! <PhCube />
+    <PhHeart @size="32" @color="hotpink" @weight="fill" /> }}
+
+    <DropdownOptions @choices={{this.data}} as |c|>
       <option>Hello {{c.label}}</option>
-    </DropdownOptions> --}}
+    </DropdownOptions>
+
     <button {{on "click" this.add}} type="button">Add</button>
     {{!-- <Dropdown @choices={{this.data}} />
 
@@ -116,6 +130,18 @@ export default class Hello extends Component {
     Hello Component
     {{this.name}}
 
+    <p>many</p>
+    <p>many</p>
+    <p>many</p>
+    <p>many</p>
+    <p>many</p>
+    <p>many</p>
+    <p>many</p>
+    <p>many</p>
+    <p>many</p>
+    <p>many</p>
+    <p>many</p>
+    <p>many</p>
     <p>many</p>
     <p>many</p>
     <p>many</p>

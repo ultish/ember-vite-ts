@@ -1,10 +1,16 @@
 import Component from '@glimmer/component';
 import Choices, { type InputChoice } from 'choices.js';
 import { modifier } from 'ember-modifier';
+import { runTask } from 'ember-lifeline';
+import PhCube from 'ember-phosphor-icons/components/ph-cube';
+import PhHeart from 'ember-phosphor-icons/components/ph-heart';
 
 interface Signature {
   Args: {
     choices: InputChoice[];
+  };
+  Blocks: {
+    default: [InputChoice];
   };
 }
 export default class DropdownOptions extends Component<Signature> {
@@ -21,7 +27,8 @@ export default class DropdownOptions extends Component<Signature> {
 
   get choices() {
     console.log('choices', this.args.choices);
-    // void this.instance?.setChoices(this.args.choices);
+    runTask(this, () => this.instance?.refresh());
+
     return this.args.choices;
   }
 
@@ -30,11 +37,34 @@ export default class DropdownOptions extends Component<Signature> {
   }
 
   <template>
+    {{! prettier-ignore }}
     <style scoped>
       .hide {
         display: none;
       }
     </style>
+
+    <PhCube @color="darkorchid" @weight="duotone">
+      <animate
+        attributeName="opacity"
+        values="0;1;0"
+        dur="4s"
+        repeatCount="indefinite"
+      />
+      <animateTransform
+        attributeName="transform"
+        attributeType="XML"
+        type="rotate"
+        dur="5s"
+        from="0 0 0"
+        to="360 0 0"
+        repeatCount="indefinite"
+      />
+    </PhCube>
+
+    <PhCube />
+    <PhHeart @size="32" @color="hotpink" @weight="fill" />
+
     <select id="test" {{this.loadData}}>
       {{#each this.choices as |c|}}
         {{yield c}}
