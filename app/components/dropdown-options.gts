@@ -47,7 +47,7 @@ export default class DropdownOptions extends Component<Signature> {
     <PhCube @color="darkorchid" @weight="duotone">
       <animate
         attributeName="opacity"
-        values="0;1;0"
+        values="0.1;1;0.1"
         dur="4s"
         repeatCount="indefinite"
       />
